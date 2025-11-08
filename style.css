@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+
+.message {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+
+h1.glow {
+  font-size: 3em;
+  color: #fff;
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #00f0ff;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00f0ff;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #00f0ff, 0 0 40px #00f0ff;
+  }
+}
+
+h2.bounce {
+  font-size: 2em;
+  margin-top: 10px;
+  animation: bounce 2s infinite;
+  color: #f0faff;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.from {
+  margin-top: 20px;
+  font-size: 1.3em;
+  color: #fff7f7;
+}
+
+/* Floating Heart Styling */
+.heart {
+  position: absolute;
+  width: 80px;
+  height: 70px;
+  background: #ff4d6d;
+  transform: rotate(-45deg);
+  animation: float 8s infinite ease-in-out;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 70px;
+  background: #ff4d6d;
+  border-radius: 50%;
+}
+
+.heart:before {
+  top: -40px;
+  left: 0;
+}
+
+.heart:after {
+  left: 40px;
+  top: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(-45deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(-45deg);
+    opacity: 0;
+  }
+}
